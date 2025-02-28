@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm(){
+             var fname=document.getElementById("first_name").value;
+             var lname=document.getElementById("last_name").value;
+             var date=document.getElementById("Date").value;
+             var email=document.getElementById("emailid").value;
+             var password1=document.getElementById("password1").value;
+             var password2=document.getElementById("password2").value;
+             var male=document.getElementById("male");
+             var female=document.getElementById("female");
+             var bca=document.getElementById("bca");
+             var mca=document.getElementById("mca");
+             var phd=document.getElementById("phd");
+             var categoary=document.getElementById("categoary").value;
+             var about=document.getElementById("about").value;
+             var upload=document.getElementById("upload").value;
+             
+            if(fname==""){
+                alert("please enter your name!");
+                document.getElementById("first_name").focus();
+                return false;
+            }
+            if(!(isNaN(fname))){
+                alert("please enter valid name!");
+                document.getElementById("first_name").value="";
+                document.getElementById("first_name").focus();
+                return false;
+            }
+            if(fname.length<3){
+                alert("please enter first name more then 3 character!");
+                document.getElementById("first_name").value="";
+                document.getElementById("first_name").focus();
+                return false;
+            }
+
+            if(lname==""){
+                alert("please enter your last name!");
+                document.getElementById("last_name").focus();
+                return false;
+            }
+            
+            if(!(isNaN(lname))){
+                alert("please enter valid last name!");
+                document.getElementById("last_name").value="";
+                document.getElementById("last_name").focus();
+                return false;
+            }
+            if(lname.length<3){
+                alert("please enter your last name more then 3 character!");
+                document.getElementById("last_name").value="";
+                document.getElementById("last_name").focus();
+                return false;
+            }
+
+            if(date==""){
+                alert("please enter your dob!");
+                document.getElementById("Date").focus();
+                return false;
+            }
+
+            if(email==""){
+                alert("please enter your email_id!");
+                document.getElementById("emailid").focus();
+                return false;
+
+            }
+            
+            if(email.indexOf(".")-email.indexOf("@")<2 || email.indexOf("@")== 0 || email.length - email.indexOf(".")==1){  
+                alert("invalid email id re enter ....!");
+              //  document.getElementById("email").value="";
+                document.getElementById("emailid").focus();
+               return false;
+           }
+        
+            if(password1==""){
+                alert("please enter a password!");
+                document.getElementById("password1").focus();
+                return false;
+            }
+            if(password1.length<8){
+                alert("please enter password grater than 8 character!");
+                document.getElementById("password1").value="";
+                document.getElementById("password1").focus();
+                return false;
+            }
+           
+            if(!password1.match('[a-z]')){
+                    alert("Password must contain atleast a single lowercase alphabet:");
+                    document.getElementById("password1").focus();
+                    return false;
+                }
+                if(!password1.match('[A-Z]')){
+                    alert("Password must contain atleast a single uppercase alphabet:");
+                    document.getElementById("password1").focus();
+                    return false;
+                }
+                if(!password1.match('[0-9]')){
+                    alert("Password must contain atleast a single digit:");
+                    document.getElementById("password1").focus();
+                    return false;
+                }
+                if(!password1.match('[@#$%^]')){
+                    alert("Password must contain atleast a special symbol:");
+                    document.getElementById("password1").focus();
+                    return false;
+                }
+                if(password2==""){
+                    alert("please enter your Re-enter your password! ");
+                    document.getElementById("password2").focus();
+                    return false;
+                }
+            if(password1!=password2){
+                alert("please check your Re-enter password!");
+                document.getElementById("password2").focus();
+                return false;
+            }
+
+          
+            if(male.checked==false && female.checked==false){
+                    alert("Please select your gender:");
+                    return false;
+                }
+               
+
+                if(!(bca.checked || mca.checked || phd.checked)){     
+                alert("Please fill your qualification");
+                return false;
+
+                }
+
+
+                if(categoary==""){
+                    alert("please select your categoary!");
+                    document.getElementById("categoary").focus();
+                    return false;
+                }
+         
+
+                if(about==""){
+                    alert("please enter about you!");
+                    document.getElementById("about").value="";
+                    document.getElementById("about").focus();
+                    return false;
+                }
+
+                if(upload==""){
+                    alert("please upload your file!..");
+                    document.getElementById("upload").focus();
+                    return false;
+                }
+
+
+        }
+    </script>
+    <style>
+        body{
+            background-image: radial-gradient(
+                rgb(246, 250, 250) 5%,rgb(29, 215, 225) 15%,rgb(0, 83, 128) 60%
+            )
+                
+          
+  
+            }
+        tr th{
+            font-size: 20px;
+            font-weight:initial;
+            font-weight: bold;
+            color: black;
+            background-image: linear-gradient(
+                to top right,
+                #3d86fa,
+                /* #ebf3fe, */
+                #b3d2ff,
+                #679eff,
+                #4484fb,
+                #3d86fa
+            );
+        }
+
+        td{
+            font-size: 15px;
+            font-weight: bold;
+            font-style: italic;
+            color: black;
+            background-image: linear-gradient(
+                to top right,
+                #3d86fa,
+                /* #ebf3fe, */
+                #b3d2ff,
+                #679eff,
+                #4484fb,
+                #3d86fa
+            );
+        }
+
+       table{
+        
+           border: 2px ;
+        
+       }
+       td{
+        letter-spacing: 1px;
+       }
+        /* input{
+            width: 97%;
+        } */
+        .width{
+            width: 95%;
+            padding-left: 6px;
+            letter-spacing: .5px;
+        }
+        .bread{
+            width: 100%;
+        }
+        .check{
+            margin-left: 0;
+            padding-left: 0;
+            width: 16%;
+        }
+        .radi{
+           margin-left: 2px;
+            width: 15%;
+
+        }
+        /* .chose{
+            width: 100%;
+
+        } */
+        .btn{
+            font-size: 18px;
+            font-style: initial;
+            font-weight: bold;
+            width: 50%;
+            height: 35px;
+        }
+        .btn:hover{
+            color: white;
+            background-color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+    <table align="center" border="1px" cellpadding="8" cellspacing="" >
+        <tr>
+            <th colspan="2" >Registration-Frorm</th>
+
+        </tr>
+        <tr>
+            <td>
+                First Name:
+            </td>
+            <td>
+                <input class="width" type="text" placeholder="enter your name "  id="first_name">
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td>
+                <input class="width" type="text" placeholder="enter your last name " id="last_name">
+            </td>
+        </tr>
+        <tr>
+            <td>DOB</td>
+            <td><input class="width" type="date" name="" id="Date"></td>
+        </tr>
+        
+        <tr>
+            <td>Email-id:</td>
+            <td><input class="width" type="text" placeholder="enter your e-mail" id="emailid" ></td>
+        </tr>
+       
+        <tr>
+            <td>Password</td>
+            <td><input class="width" type="text" placeholder="enter your password " id="password1"></td>
+        </tr>
+
+        <tr>
+            <td>Re-enter password</td>
+            <td><input class="width" type="text" placeholder="Re-enter password " id="password2"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+            <input type="radio" class="radi" name="Gender" value="male" id="male">Male
+            <input type="radio" class="radi" name="Gender" value="female" id="female">Female
+        </td>
+        </tr>
+        <tr>
+            <td>Qualification</td>
+            <td>
+                <input class="check" type="checkbox" id="bca">Bca
+                <input class="check" type="checkbox" id="mca">Mca
+                <input class="check" type="checkbox" id="phd">Phd
+            </td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+               <select class="width bread" id="categoary">                
+
+                <option value="">select</option>
+                <option value="General">General</option>
+                <option value="Obc">Obc</option>
+                <option value="Sc/st">Sc/St</option>
+                <option value="other">Other</option>
+               </select>
+            </td>
+        </tr>
+        <tr>
+            <td>About you</td>
+            <td>
+                <textarea class="width" id="about" placeholder="in 20 words"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Upload Image</td>
+            <td><input type="file" class="chose" id="upload"></td>
+        </tr>
+        <tr >
+            
+            <th colspan="2">
+                <input type="submit" class="btn" value="Register" id="btn_submit">
+            </th>
+        </tr>
+    </table>
+    
+    </form>
+</body>
+</html>
